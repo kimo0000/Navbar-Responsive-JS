@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+nav {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: goldenrod;
+    color: white;
+    position: relative;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 769px) {
+    nav ul {
+        position: absolute;
+        opacity: 1;
+        flex-direction: column;
+        background-color: #444;
+        top: 60px;
+        right: 0px;
+        display: none;
+        padding: 10px;
+        width: 220px;
+        height: 100vh;
+    }
+}
+
+nav ul .fa-solid {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+@media (max-width: 769px) {
+    nav ul .fa-solid {
+        opacity: 1;
+        background-color: #f50;
+        padding: 8px;
+        top: -10px;
+        left: -10px;
+    }
+}
+
+nav ul li {
+    padding: 5px 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+@media (max-width: 769px) {
+    nav ul li {
+        margin: 0 0 20px;
+        transition: .3s;
+    }
+    nav ul li:hover {
+        padding-left: 25px;
+        transform: scale(1.1);
+    }
+}
+
+nav ul li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: gold;
+    transition: .3s;
+}
+
+@media (max-width: 769px) {
+    nav ul li::before {
+       opacity: 0;
+    }
+}
+
+nav ul li:hover::before {
+    width: 80%;
+    background-color: #fff;
+}
+
+nav .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 769px) {
+     nav .menu {
+        display: none;
+     }
+}
+
+nav .menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
